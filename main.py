@@ -103,7 +103,7 @@ while 1:
     for i in listOfWorms:
         i.simulate();
         i.collision(decore, decorerect, 0.8)
-    
+
 
     if grenade != None:
         grenade.draw(screen)

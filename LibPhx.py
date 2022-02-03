@@ -192,7 +192,7 @@ class Worms(Collider):
     def draw(self, screen, font):
         Collider.draw(self, screen)
 
-        textsurface = font.render(self.Equipe, False, (255, 255, 255))
+        textsurface = font.render(self.Equipe, False, (0,0, 0))
 
         if self.velocity[0] > 0 and not self.flip:
             self.flip = True;
