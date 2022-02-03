@@ -101,16 +101,15 @@ while 1:
     screen.blit(decore, decorerect)
 
     for i in listOfWorms:
-        i.collision(decore, decorerect, 0.8)
         i.simulate();
-
-
-
+        i.collision(decore, decorerect, 0.8)
+    
 
     if grenade != None:
         grenade.draw(screen)
-        grenade.collision(decore, decorerect, 0.8)
         grenade.simulate()
+        grenade.collision(decore, decorerect, 0.8)
+
 
 
         counter -= 1

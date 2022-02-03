@@ -112,8 +112,8 @@ class body:
 
             self.addForce(0,0)
 
-
-            self.addForce(-getAngle(A,symetrie),((Force)) * coefRebond)
+            if(Force > 1):
+                self.addForce(-getAngle(A,symetrie),((Force)) * coefRebond)
 
 
     def findSurface(self, decore, decorerect, x_, y_):
