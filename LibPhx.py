@@ -94,7 +94,7 @@ class body:
             pos = self.findSurface(decore, decorerect, self.currentPosition[0], self.currentPosition[1]);
             self.x = self.currentPosition[0]
             self.currentPosition[1] = pos[1]
-            self.y = pos[1]
+            self.y =  self.currentPosition[1]
             self.pas = 0
 
             A = self.currentPosition
@@ -109,10 +109,11 @@ class body:
 
             Force = normalise([symetrie[0] - A[0], symetrie[1] - A[1]])
             Force = Force
+
             self.addForce(0,0)
 
-            if Force > 1 :
-                self.addForce(-getAngle(A,symetrie),(Force) * coefRebond)
+
+            self.addForce(-getAngle(A,symetrie),((Force)) * coefRebond)
 
 
     def findSurface(self, decore, decorerect, x_, y_):
@@ -134,7 +135,7 @@ class body:
             else:
                 trouver = True
 
-        return [x, y + 5 ]
+        return [x, y + 1 ]
 
 
 class Collider(body):
@@ -169,8 +170,6 @@ class Worms(Collider):
         self.Arrow = image
         self.Angle = 0
         self.tir = Collider(0, 0, image, rect)
-
-
 
     def Viser(self, Arrow, screen):
 

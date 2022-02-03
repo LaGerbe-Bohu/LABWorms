@@ -18,6 +18,7 @@ myfont = pygame.font.SysFont('Comic Sans MS', 10)
 # le décor
 decore =  pygame.Surface((1440, 900), pygame.SRCALPHA)
 arrow = pygame.image.load("Images/Arrow.png")
+fond = pygame.image.load("Images/fond.png")
 decorerect = decore.get_rect()
 
 
@@ -96,25 +97,26 @@ while 1:
 
     screen.fill(black)
 
+    screen.blit(fond, fond.get_rect())
     screen.blit(decore, decorerect)
+
     for i in listOfWorms:
+        i.collision(decore, decorerect, 0.8)
         i.simulate();
-        i.collision(decore,decorerect,0.8)
+
 
 
 
     if grenade != None:
         grenade.draw(screen)
+        grenade.collision(decore, decorerect, 0.8)
         grenade.simulate()
-        grenade.collision(decore,decorerect,0.8)
+
 
         counter -= 1
 
-
-
         if(counter < 0):
             pos = grenade.getPosition();
-
             destroyDecor(int(pos[0]),int(pos[1]))
             grenade = None
 
