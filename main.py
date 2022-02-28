@@ -23,7 +23,7 @@ class Equipe:
 pygame.init()
 size = width, height = 1440, 900
 black = 0, 0, 0
-screen = pygame.display.set_mode(size)
+screen = pygame.display.set_mode()
 pygame.font.init()
 myfont = pygame.font.SysFont('Comic Sans MS', 10)
 myfont2 = pygame.font.SysFont('Comic Sans MS', 25)
